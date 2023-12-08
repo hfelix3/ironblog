@@ -33,7 +33,7 @@ npm start
 
 ```
 
-In your brower, navigate to http://localhost:3001/
+In your browser, navigate to http://localhost:3001/
 
 
 ## Usage
@@ -58,7 +58,7 @@ This project is covered under the MIT license.
 
 ## How to contribute
 
-To contibute to the project, fork the repository and add your changes. 
+To contribute to the project, fork the repository and add your changes. 
 
 When your changes are ready to be incorporated, create a pull request into the main branch of the source repository.
 
