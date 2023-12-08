@@ -1,5 +1,5 @@
 ## ironblog
-
+## Badges
   [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
@@ -9,13 +9,14 @@ ironblog; .
 ## Table of Contents
 
 * [ironblog](#ironblog)
+* [Badges] (#Badges)
 * [Description](#Description)
-* [Table of Contents](#table-of-contents)
-* [Installation](#installation)
+* [Table of Contents](#Table-of-contents)
+* [Installation](#Installation)
 * [Usage](#Usage)
 * [License](#License)
-* [Contribution Guidelines](#contribution-guidelines)
-* [Test Instructions](#test-instructions)
+* [How to contribute](#How-to-contribute)
+* [Testing](#testing)
 
 ## Installation
 
@@ -55,7 +56,7 @@ Once you have logged in, navigate to .
 
 This project is covered under the MIT license.
 
-## Contribution Guidelines
+## How to contribute
 
 To contibute to the project, fork the repository and add your changes. 
 
@@ -63,11 +64,11 @@ When your changes are ready to be incorporated, create a pull request into the m
 
 Your changes will be review and approve is appropriate. 
 
-## Test Instructions
+## Testing
 
 
 
-## Questions or Feedback
+## Links
 
 Heroku url:
 Github Profile: <https://github.com/hfelix3/ironblog>
