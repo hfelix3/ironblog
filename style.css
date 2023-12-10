@@ -1,0 +1,17 @@
+* {
+    color: gray;
+    background-color: black;
+    margin: 1%
+}
+
+.topnav {
+    background-color: rgb(59, 59, 5);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.postsection {
+    border-width: 10px;
+    border: white;
+    border-style: solid;
+}
