@@ -9,23 +9,36 @@
 
 <nav>
     <div class="topnav">
-        <button>
+        <button status = "Logged Out" onclick="showLogin()">
             <a class="active" href="#home">Home</a>
         </button>
-        <button>
+        <button status = "Logged Out" onclick="showLogin()">
             <a href="#dashboard">Dashboard</a>
         </button>
-        <div>
-        <button class="loginbtn">
-            <a href="#login">Login</a>
+
+        <button id= "loginBtn" status = "Logged Out" onclick="showLogin()">
+            Log In
         </button>
-        </div>
+        
     </div>
 </nav>
 
 <h1>IronBlog</h1>
 
 <body>
+    <div id="loginContainer" class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="hideLogin()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <br>
+            <input type="submit" value="Click to Log In">
+            <input type="submit" value="Sign Up">
+    </form>
+  </div>
 
     <main class="postsection">
    
@@ -49,6 +62,35 @@
     
     </main>
 
+    <script>
+        // JavaScript to show and hide the login screen
+        let status = "Logged Out"
+
+        function LogIn() {
+            
+            status = "Logged In";
+        }
+
+        function LogOut() {
+            
+            status = "Logged Out"
+        } if (status == "Logged Out") {
+            hideLogin()
+        }
+
+        
+        function showLogin() {
+            document.getElementById("loginContainer").style.display = "block";
+            // TODO: change this to hide button instead of displaying button without text. 
+            document.getElementById("loginBtn").textContent = "";
+        }
+    
+        function hideLogin() {
+          document.getElementById("loginContainer").style.display = "none";
+        
+          document.getElementById("loginBtn").textContent = "Log Out";
+        }
+      </script>
 </body>
 
 </html>
