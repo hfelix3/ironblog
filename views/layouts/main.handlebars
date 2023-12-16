@@ -7,9 +7,24 @@
     <title>IronBlog</title>
 </head>
 
-    {{{ nav }}}
-
 <body>
+<h1>IronBlog</h1>
+
+    <nav>
+    <div class="topnav">
+        <button status = "Logged Out" onclick="showLogin()">
+            <a class="active" href="#home">Home</a>
+        </button>
+        <button status = "Logged Out" onclick="showLogin()">
+            <a href="#dashboard">Dashboard</a>
+        </button>
+
+        <button id= "loginBtn" status = "Logged Out" onclick="showLogin()">
+            Log In
+        </button>
+        
+    </div>
+</nav>
 
     {{{ body }}}
     
