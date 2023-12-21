@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class ironblog extends Model {}
+class IronBlog extends Model {}
 
-ironblog.init(
+IronBlog.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -37,4 +37,4 @@ ironblog.init(
         }
       );
       
-      module.exports = ironblog;
+      module.exports = IronBlog;

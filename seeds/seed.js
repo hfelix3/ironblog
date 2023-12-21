@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, ironblog } = require('../models');
+const { User, IronBlog } = require('../models');
 
 
 const seedDatabase = async () => {
@@ -10,9 +10,9 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    for (const irongblog of ironblogData){
-        await ironblog.create({
-            ...ironblog,
+    for (const irongblog of IronBlogData){
+        await IronBlog.create({
+            ...IronBlog,
             user_id: users[Math.floor(math.random() * users.length)].id,
         });
     }

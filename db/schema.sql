@@ -1,7 +1,7 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS ironblog_db;
+DROP DATABASE IF EXISTS IronBlog_db;
 
 -- CREATE DATABASE
-CREATE DATABASE ironblog_db;
+CREATE DATABASE IronBlog_db;
 -- USE DATABASE
-USE ironblog_db;
+USE IronBlog_db;

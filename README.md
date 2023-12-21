@@ -1,14 +1,14 @@
-## ironblog
+## IronBlog
 ## Badges
   [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-ironblog; .
+IronBlog; .
 
 ## Table of Contents
 
-* [ironblog](#ironblog)
+* [IronBlog](#IronBlog)
 * [Badges] (#Badges)
 * [Description](#Description)
 * [Table of Contents](#Table-of-contents)
@@ -23,9 +23,9 @@ ironblog; .
 To install and test copy and paste the following into terminal:
 
 ```Bash
-git clone git@github.com:hfelix3/ironblog.git
+git clone git@github.com:hfelix3/IronBlog.git
 
-cd ironblog
+cd IronBlog
 
 npm install 
 
@@ -71,4 +71,4 @@ Your changes will be review and approve is appropriate.
 ## Links
 
 Heroku url:
-Github Profile: <https://github.com/hfelix3/ironblog>
+Github Profile: <https://github.com/hfelix3/IronBlog>

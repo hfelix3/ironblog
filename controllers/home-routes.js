@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { ironblog, User } = require('../models');
+const { IronBlog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        const ironblogData = await ironblog.findAll({
+        const IronBlogData = await IronBlog.findAll({
             include: [
                 {
                     model: User,
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
         });
 
         // ?do I need to have the variable name changed???
-        const blogs = ironblogData.map((project) => project.get({ plain: true }));
+        const blogs = IronBlogData.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
             projects,
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 
 router.get('/project/:id', async (req, res) => {
     try {
-        const ironblogData = await ironblog.findByPk(req,params.id, {
+        const IronBlogData = await IronBlog.findByPk(req,params.id, {
             include: [
                 {
                     model: User,
@@ -36,7 +36,7 @@ router.get('/project/:id', async (req, res) => {
             ],
         });
 
-        const blogs = ironblogData.get({ plain: true });
+        const blogs = IronBlogData.get({ plain: true });
 
         res.render('project', {
             ...blogs,
@@ -51,7 +51,7 @@ router.get('/profile', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: {exclude: ['password'] },
-            include: [{ model: ironblog }],
+            include: [{ model: IronBlog }],
         });
 
         const user = userData.get({ plain: true });
