@@ -10,7 +10,7 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    for (const irongblog of IronBlogData){
+    for (const IronBlog of IronBlogData){
         await IronBlog.create({
             ...IronBlog,
             user_id: users[Math.floor(math.random() * users.length)].id,
