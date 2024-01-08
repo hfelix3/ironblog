@@ -1,4 +1,4 @@
-const User = require('/User');
+const User = require('./User');
 const IronBlog = require('./IronBlog');
 
 User.hasMany(IronBlog, {

@@ -11,13 +11,13 @@ comment.init({
     primaryKey:true,
     autoIncrement: true
     },
-    text: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     username: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    text: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     post_id: {
         type: DataTypes.INTEGER,
