@@ -1,17 +1,18 @@
 // load dependencies
-var express = require("express");
-var Sequelize = require("sequelize");
-var session = require("express-session");
-const routes = require('./controllers');
 const path = require('path')
+var express = require("express");
+var session = require("express-session");
+const exphbs = require('express-handlebars');
+var Sequelize = require("sequelize");
+const routes = require('./controllers');
 
 // add a require for handle bars
-const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 
 // initialize application
 const app = express();
 // initialize sequelize with session store
+// ?is this a dependency
 var SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Set Handlebars as the default template engine.
@@ -46,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   })
 // );
 
+// ?replace this block with the top one? referr to activity 20 serverjs
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
