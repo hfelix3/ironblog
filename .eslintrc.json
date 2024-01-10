@@ -1,14 +1,15 @@
 {
-  // Prevent ESLint from looking at parent directories
   "root": true,
   "env": {
     "browser": true,
     "commonjs": true,
     "node": true,
-    // Add support for ES6 features
-    "es6": true
+    "es6": true,
+    "es2017": true,
+    "es2018": true
   },
   "rules": {
+    "no-undef-init": "error",
     "no-duplicate-case": "error",
     "no-empty": "error",
     "no-extra-semi": "error",

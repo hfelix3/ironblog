@@ -1,7 +1,8 @@
 # IronBlog
 
 ## Badges
-  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![alt text](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&)
 ![alt text](https://img.shields.io/badge/Handlebars.js-f0772b?style=for-the-badge&logo=handlebarsdotjs&logoColor=black)
 
@@ -11,15 +12,15 @@ IronBlog; .
 
 ## Table of Contents
 
-* [IronBlog](#IronBlog)
-* [Badges](#Badges)
-* [Description](#Description)
-* [Table of Contents](#Table-of-contents)
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [License](#License)
-* [How to contribute](#How-to-contribute)
-* [Testing](#testing)
+- [IronBlog](#IronBlog)
+- [Badges](#Badges)
+- [Description](#Description)
+- [Table of Contents](#Table-of-contents)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [How to contribute](#How-to-contribute)
+- [Testing](#testing)
 
 ## Installation
 
@@ -30,14 +31,13 @@ git clone git@github.com:hfelix3/IronBlog.git
 
 cd IronBlog
 
-npm install 
+npm install
 
 npm start
 
 ```
 
 In your browser, navigate to http://localhost:3001/
-
 
 ## Usage
 
@@ -51,31 +51,28 @@ Once you have logged in, navigate to .
 
 < Insert picture >
 
-
 ## Deployed Application
 
 ![Image](./public/images/localhost_3001.png)
 
-
-
 ## How to contribute
 
-To contribute to the project, fork the repository and add your changes. 
+To contribute to the project, fork the repository and add your changes.
 
 When your changes are ready to be incorporated, create a pull request into the main branch of the source repository.
 
-Your changes will be review and approve is appropriate. 
+Your changes will be review and approve is appropriate.
 
 ## Testing
 
-
-
 ## Links
+
 ### [Github Profile](https://github.com/hfelix3/IronBlog/)
 
 ### [Heroku]()
 
 # MIT License
+
 MIT License
 
 Copyright (c) 2023 Hector

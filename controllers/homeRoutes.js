@@ -1,24 +1,24 @@
-const router = require("express").Router();
-const { IronBlog, User } = require("../models");
-const withAuth = require("../utils/auth");
+const router = require('express').Router();
+const { IronBlog, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 // GET HOME PAGE user
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const IronBlogData = await IronBlog.findAll({
       include: [
         {
           model: User,
           // ?how many attributes should I include?
-          attributes: ["name"],
+          attributes: ['name'],
         },
       ],
     });
     // IF I CHANGE THE CONST TO IronBlog I GET THIS ERROR got error ReferenceError: Cannot access 'IronBlog' before initialization AND THE APP WONT LOAD IN THE BROWSER.
     const Blog = IronBlogData.map((project) => project.get({ plain: true }));
-    res.render("homepage", {
+    res.render('homepage', {
       // ?IS LINE 24 THE SAME AS 23?
-      title: "IronBlog3",
+      title: 'IronBlog3',
       IronBlog,
       logged_in: req.session.logged_in,
     });
@@ -28,20 +28,20 @@ router.get("/", async (req, res) => {
   }
 });
 // ?is this path correct?
-router.get("/IronBlog/:id", async (req, res) => {
+router.get('/IronBlog/:id', async (req, res) => {
   try {
     const IronBlogData = await IronBlog.findByPk(req, params.id, {
       include: [
         {
           model: User,
-          attributes: ["id", "name"],
+          attributes: ['id', 'name'],
         },
       ],
     });
 
     const blogs = IronBlogData.get({ plain: true });
     // NOT SURE WHAT TO RENDER HERE FROM HANDLEBARS.
-    res.render("project", {
+    res.render('project', {
       ...blogs,
       logged_in: req.session.logged_in,
     });
@@ -52,17 +52,17 @@ router.get("/IronBlog/:id", async (req, res) => {
 });
 
 // GET DASHBOARD
-router.get("/dashboard", withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
+      attributes: { exclude: ['password'] },
       include: [{ model: IronBlog }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render("dashboard", {
-      title: "Dashboard",
+    res.render('dashboard', {
+      title: 'Dashboard',
       ...user,
       logged_in: true,
     });
@@ -72,13 +72,13 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 // LOGIN ROUTE do I need this one here?
-router.get("/login", (req, res) => {
+router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect('/dashboard');
     return;
   }
 
-  res.render("login");
+  res.render('login');
 });
 
 module.exports = router;

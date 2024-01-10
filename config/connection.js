@@ -15,17 +15,18 @@ if (process.env.JAWSDB_URL) {
       dialect: 'mysql',
       port: 3306,
       dialectOptions: {
-      socketPath: '/tmp/mysql.sock'
-      }
-    }
+        socketPath: '/tmp/mysql.sock',
+      },
+    },
   );
-  sequelize.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+  sequelize
+    .authenticate()
+    .then(() => {
+      console.log('Connection has been established successfully.');
+    })
+    .catch((err) => {
+      console.error('Unable to connect to the database:', err);
+    });
 }
 
 module.exports = sequelize;
