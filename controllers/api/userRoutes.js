@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
       const userData = await User.findAll();
       res.json(userData);
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
   });
@@ -21,6 +22,7 @@ router.get('/', async (req, res) => {
           res.status(200).json(userData);
       });
   } catch (err) {
+    console.log(err)
       res.status(400).json(err);
   }
   });
@@ -53,6 +55,7 @@ router.get('/', async (req, res) => {
         });
 
     } catch (err) {
+        console.log(err)
         res.status(400).json(err);
     }
     });
@@ -63,6 +66,7 @@ router.post('/logout', (req, res) => {
             res.status(204).end();
         });
     } else {
+        console.log(err)
         res.status(404).end();
     }
     });

@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 });
@@ -43,6 +44,7 @@ router.get('/project/:id', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 });
@@ -61,6 +63,7 @@ router.get('/profile', withAuth, async (req, res) => {
             logged_in: true
         });
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 });
@@ -72,6 +75,7 @@ router.get('/login', (req, res) => {
     }
 
     res.render('login');
+    
 });
 
 module.exports = router;
