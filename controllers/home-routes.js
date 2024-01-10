@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
         const blogs = IronBlogData.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
-            projects,
+            blogs,
             logged_in: req.session.logged_in
         });
     } catch (err) {

@@ -1,13 +1,20 @@
 const User = require('./User');
 const IronBlog = require('./IronBlog');
+const Comment =require('./comment');
 
-User.hasMany(IronBlog, {
+IronBlog.hasMany(Comment, {
+    foreignKey: 'blog_Id',
+    onDelete: 'CASCADE'
+  });
+
+  Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+  });
+
+IronBlog.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-IronBlog.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
-module.exports = { User, IronBlog };
+module.exports = { User, IronBlog, Comment };

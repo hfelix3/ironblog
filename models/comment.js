@@ -19,18 +19,9 @@ comment.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    post_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-        model: 'post',
-        key: 'id'
-        }
+    }, 
+    {
+        sequelize
     },
-    sequelize,
-    tableName: 'comments',
-    modelName: 'comment',
-    timestamps: true
-
-});
+);
 module.exports = comment;
