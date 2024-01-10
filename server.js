@@ -1,10 +1,10 @@
 // load dependencies
-const path = require('path')
+const path = require("path");
 var express = require("express");
 var session = require("express-session");
-const exphbs = require('express-handlebars');
+const exphbs = require("express-handlebars");
 var Sequelize = require("sequelize");
-const routes = require('./controllers');
+const routes = require("./controllers");
 
 // add a require for handle bars
 const hbs = exphbs.create({});
@@ -16,16 +16,15 @@ const app = express();
 var SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Set Handlebars as the default template engine.
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 const PORT = process.env.PORT || 3001;
 
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 // ?DO I NEED THIS? GOT IT FROM CONNECT-SESSION-SEQUELIZE INSTALL
 // // create database, ensure 'sqlite3' in your package.json
@@ -48,15 +47,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 // );
 
 // ?replace this block with the top one? referr to activity 20 serverjs
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  }),
+);
 
 app.use(routes);
 
 app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}!`);
-  })
+  console.log(`App listening on port ${PORT}!`);
+});

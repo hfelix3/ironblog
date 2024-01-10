@@ -40,7 +40,7 @@ const signupFromHandler = async (event) => {
         }
     }
 };
-
+// ?CHANGE .login-form AND submit?
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
