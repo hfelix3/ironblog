@@ -5,14 +5,68 @@
 }
 
 .topnav {
-    background-color: rgb(59, 59, 5);
     display: flex;
     justify-content: flex-end;
+    background-color: rgb(24, 26, 26);
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
-.login-container {
-    display: none;
+button {
+    font-size: 15px;
+  padding: 0.1em 1.5em;
+  letter-spacing: 0.10em;
+  position: relative;
+  font-family: inherit;
+}
+
+text {
+    font-size: 17px;
+    letter-spacing: 0.10em;
+}
+
+input {
+    font-size: 15px;
+    padding: 0.1em 2.5em;
+    letter-spacing: 0.20em;
+    position: relative;
+    font-family: inherit;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    padding: 50px;
+    height: 350px;
+    gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  background-color: rgb(24, 26, 26);
+  box-shadow: inset 2px 5px 30px rgb(5, 5, 5);
   }
+
+  .signup-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    padding: 50px;
+    height: 350px;
+    gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  background-color: rgb(24, 26, 26);
+  box-shadow: inset 2px 5px 30px rgb(5, 5, 5);
+  }
+
+/* .hide {
+    display: none;
+  } */
 
 .postsection {
     border-width: 10px;

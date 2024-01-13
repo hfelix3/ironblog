@@ -1,16 +1,4 @@
 <body>
-    <div id="loginContainer" class="login-container">
-        <form onsubmit="hideLogin()">
-            
-            <input type="text" id="username" placeholder="Username" name="username">
-            <br>
-            <input type="password" id="password" placeholder="Password" name="password">
-            
-            <br>
-            <button type="submit" value="Click to Log In">Log in</button>
-            <button type="submit" value="Sign Up">Sign up</button>
-        </form>
-    </div>
 
 <main class="postsection"> 
    
@@ -34,36 +22,4 @@
     
 </main>
 
-    <script>
-        // JavaScript to show and hide the login screen
-        let status = "Logged Out"
-
-        function LogIn() {
-            
-            status = "Logged In";
-        }
-
-        function LogOut() {
-            
-            status = "Logged Out"
-        } if (status == "Logged Out") {
-            hideLogin()
-        }
-
-        
-        function showLogin() {
-            document.getElementById("loginContainer").style.display = "block";
-            // TODO: change this to hide button instead of displaying button without text. 
-            document.getElementById("loginBtn").textContent = "";
-        }
-    
-        function hideLogin() {
-          document.getElementById("loginContainer").style.display = "none";
-        
-          document.getElementById("loginBtn").textContent = "Log Out";
-        }
-    </script>
-
 </body>
-    <script src="/js/login.js"></script>
-    <script src="/js/logout.js"></script>

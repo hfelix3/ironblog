@@ -11,23 +11,37 @@
 
     <nav>
       <div class="topnav">
-        <button status="Logged Out" onclick="showLogin()">
-          <a class="active" href="#home">Home</a>
+        <button>
+          <a class="active" href="/">Home</a>
         </button>
-        <button status="Logged Out" onclick="showLogin()">
-          <a href="#dashboard">Dashboard</a>
+        <button>
+          <a href="/dashboard">Dashboard</a>
         </button>
 
-        <button id="loginBtn" status="Logged Out" onclick="showLogin()">
-          Log In
+        
+        {{#if logged_in}}
+        <button class="" id="logout">logout</button>
+        {{else}}
+        <button>
+          <a class="hide" href="/login">Login</a>
         </button>
+        {{/if}}
+        
 
       </div>
     </nav>
-
-    {{> login}}
-
+  <main>
     {{{body}}}
+  </main>
 
+  <footer>
+      
+    </footer>
+
+    {{#if logged_in}}
+    <button>
+            <script src="/js/logout.js"></script>
+    </button>
+  {{/if}}
   </body>
 </html>

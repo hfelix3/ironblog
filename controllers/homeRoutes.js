@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
         {
           model: User,
           // ?how many attributes should I include?
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -34,14 +34,14 @@ router.get('/IronBlog/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['id', 'name'],
+          attributes: ['id', 'username'],
         },
       ],
     });
 
+    // create a single post for post handlebars
     const blogs = IronBlogData.get({ plain: true });
-    // NOT SURE WHAT TO RENDER HERE FROM HANDLEBARS.
-    res.render('project', {
+    res.render('post', {
       ...blogs,
       logged_in: req.session.logged_in,
     });
@@ -79,6 +79,16 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+// sign up ROUTE
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('signup');
 });
 
 module.exports = router;

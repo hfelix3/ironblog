@@ -1,0 +1,25 @@
+<div id='loginContainer' class='login-container'>
+  <form class='login-form'>
+
+    <input type='text' id='email-login' placeholder='E-mail' name='email' />
+    <br />
+    <input
+      type='password'
+      id='password-login'
+      placeholder='Password'
+      name='password'
+    />
+
+    <br />
+    {{!-- Change to input instead of button? --}}
+    <button type='submit' value='Click to Log In'>
+      <a href='/dashboard'>Login</a>
+    </button>
+    <button type='submit' value='Sign Up'>
+      <a href='/signup'>Signup</a>
+    </button>
+  </form>
+</div>
+
+<script src='/js/login.js'></script>
+<script src='/js/logout.js'></script>

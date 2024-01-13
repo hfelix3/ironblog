@@ -5,11 +5,13 @@ const logout = async () => {
   });
 
   if (response.ok) {
+    // If successful, redirect the browser to the HOME page = '/'
     document.location.replace('/');
   } else {
     alert('Failed to log out.');
   }
 };
 
-// ?CHANGE #logout?
-document.querySelector('#logout').addEventListener('click', logout);
+document
+.querySelector('#logout')
+.addEventListener('click', logout);
