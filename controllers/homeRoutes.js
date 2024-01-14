@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     const Blog = IronBlogData.map((project) => project.get({ plain: true }));
     res.render('homepage', {
       // ?IS LINE 24 THE SAME AS 23?
-      title: 'IronBlog3',
+      title: 'IronBlog',
       IronBlog,
       logged_in: req.session.logged_in,
     });
