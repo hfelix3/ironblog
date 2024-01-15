@@ -15,10 +15,10 @@ router.get('/', async (req, res) => {
       ],
     });
     
-    // const IronBlog = IronBlogData.map((project) => project.get({ plain: true }));
+    const IronBlog1 = IronBlogData.map((IronBlog) => IronBlog.get({ plain: true }));
     res.render('homepage', {
       title: 'IronBlog',
-      IronBlog,
+      IronBlog1,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

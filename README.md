@@ -26,19 +26,20 @@ IronBlog; My given task was to build a CMS-style blog site similar to a Wordpres
 
 ## Table of Contents
 
-- [IronBlog](#IronBlog)
-- [Badges](#Badges)
-- [Description](#Description)
-- [Table of Contents](#Table-of-contents)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [License](#License)
-- [How to contribute](#How-to-contribute)
-- [Testing](#testing)
+* [IronBlog](#IronBlog)
+* [Badges](#Badges)
+* [Description](#Description)
+* [Table of Contents](#Table-of-contents)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [How to contribute](#How-to-contribute)
+* [Testing](#testing)
+* [Links](#Links*)
+* [License](#License)
 
 ## Installation
 
-To install and test copy and paste the following into terminal:
+To install and test, copy and paste the following into terminal:
 
 ```Bash
 git clone git@github.com:hfelix3/IronBlog.git
@@ -75,7 +76,7 @@ To contribute to the project, fork the repository and add your changes.
 
 When your changes are ready to be incorporated, create a pull request into the main branch of the source repository.
 
-Your changes will be review and approve is appropriate.
+Your changes will be reviewed and approved as appropriate.
 
 ## Testing
 
