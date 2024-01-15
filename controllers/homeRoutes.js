@@ -14,10 +14,9 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    // IF I CHANGE THE CONST TO IronBlog I GET THIS ERROR got error ReferenceError: Cannot access 'IronBlog' before initialization AND THE APP WONT LOAD IN THE BROWSER.
-    const Blog = IronBlogData.map((project) => project.get({ plain: true }));
+    
+    const IronBlog = IronBlogData.map((project) => project.get({ plain: true }));
     res.render('homepage', {
-      // ?IS LINE 24 THE SAME AS 23?
       title: 'IronBlog',
       IronBlog,
       logged_in: req.session.logged_in,
@@ -27,6 +26,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // ?is this path correct?
 router.get('/IronBlog/:id', async (req, res) => {
   try {
@@ -52,6 +52,7 @@ router.get('/IronBlog/:id', async (req, res) => {
 });
 
 // GET DASHBOARD
+// not saving credentials to session
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
