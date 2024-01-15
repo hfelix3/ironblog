@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
       ],
     });
     
-    // const IronBlog = IronBlogData.map((project) => project.get({ plain: true }));
+    const IronBlog = IronBlogData.map((project) => project.get({ plain: true }));
     res.render('homepage', {
       title: 'IronBlog',
       IronBlog,
