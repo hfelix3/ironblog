@@ -12,6 +12,5 @@ const logout = async () => {
   }
 };
 
-document
-.querySelector('#logout')
-.addEventListener('click', logout);
+console.log("logout element", document.querySelector('email-login'));
+document.querySelector('#logout').addEventListener('click', logout);
