@@ -53,6 +53,7 @@ router.get('/IronBlog/:id', async (req, res) => {
 
 // GET DASHBOARD
 // not saving credentials to session
+// use post find all and there use the where clause then req.session.user_id then pass in posts then const user = userData.get({ plain: true }); pass posts but not user. 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
