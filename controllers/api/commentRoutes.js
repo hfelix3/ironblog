@@ -4,7 +4,6 @@ const { Comment } = require('../../models');
 // Get all comments
 router.get('/', async (req, res) => {
   try {
-    // ?is commentData what goes into the comments.handlebars file?
     const CommentData = await Comment.findAll();
     res.json(CommentData);
   } catch (err) {
@@ -30,7 +29,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Post comment
-router.post('/', async (req, res) => {
+router.post('/post', async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,

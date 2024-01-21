@@ -14,8 +14,10 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    
-    const IronBlog1 = IronBlogData.map((IronBlog) => IronBlog.get({ plain: true }));
+
+    const IronBlog1 = IronBlogData.map((IronBlog) =>
+      IronBlog.get({ plain: true })
+    );
     res.render('homepage', {
       title: 'IronBlog',
       IronBlog1,
@@ -27,7 +29,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// ?is this path correct?
 router.get('/IronBlog/:id', async (req, res) => {
   try {
     const IronBlogData = await IronBlog.findByPk(req, params.id, {
@@ -39,10 +40,10 @@ router.get('/IronBlog/:id', async (req, res) => {
       ],
     });
 
-    // create a single post for post handlebars
-    const blogs = IronBlogData.get({ plain: true });
+    const blog = await IronBlogData.get(blogId, { plain: true });
+
     res.render('post', {
-      ...blogs,
+      ...blog,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -53,15 +54,18 @@ router.get('/IronBlog/:id', async (req, res) => {
 
 // GET DASHBOARD
 // not saving credentials to session
-// use post find all and there use the where clause then req.session.user_id then pass in posts then const user = userData.get({ plain: true }); pass posts but not user. 
+// use post find all and there use the where clause then req.session.user_id then pass in posts then const user = userData.get({ plain: true }); pass posts but not user.
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: IronBlog }],
+    const userData = await User.findAll({
+      where: {
+        id: req.session.user_id,
+      },
     });
 
-    const user = userData.get({ plain: true });
+    console.log(userData);
+    const user = userData.map((user) => user.get({ plain: true }));
+    // const user = userData.get({ plain: true });
 
     res.render('dashboard', {
       title: 'Dashboard',
