@@ -28,21 +28,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Post comment
-router.post('/post', async (req, res) => {
-  try {
-    const newComment = await Comment.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
-
-    res.status(200).json(newComment);
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
-});
-
 //update a comment
 router.put('/:id', async (req, res) => {
   const CommentData = await Comment.update(req.body, {

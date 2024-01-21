@@ -77,6 +77,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 // LOGIN ROUTE do I need this one here?
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
@@ -95,6 +97,53 @@ router.get('/signup', (req, res) => {
   }
 
   res.render('signup');
+});
+
+
+// RENDER NEWPOST.HANDLEBARS ROUTE
+router.get('/newPost', withAuth, async (req, res) => {
+  try {
+    const renderPost = await User.findAll({
+      where: {
+        id: req.session.user_id,
+      },
+    });
+
+    console.log(renderPost);
+    const user = renderPost.map((user) => user.get({ plain: true }));
+
+    res.render('post', {
+      title: 'New Post',
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// RENDER EDITPOST.HANDLEBARS ROUTE
+router.get('/editPost', withAuth, async (req, res) => {
+  try {
+    const renderEditPost = await User.findAll({
+      where: {
+        id: req.session.user_id,
+      },
+    });
+
+    console.log(renderEditPost);
+    const user = renderEditPost.map((user) => user.get({ plain: true }));
+
+    res.render('editPost', {
+      title: 'Edit Post',
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
