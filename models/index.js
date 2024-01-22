@@ -1,7 +1,7 @@
-const User = require('./User');
-const IronBlog = require('./IronBlog');
-const Comment = require('./comment');
-const Post = require('./Post');
+const User = require('../../irontestfile/User');
+const IronBlog = require('../../irontestfile/IronBlog');
+const Comment = require('../../irontestfile/comment');
+const Post = require('../../irontestfile/Post');
 
 IronBlog.hasMany(Comment, {
   foreignKey: 'blog_Id',
