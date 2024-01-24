@@ -3,13 +3,13 @@ const postFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the edit post class section
-  const postTitle = document.querySelector('#title').value.trim();
-  const newPostInput = document.querySelector('#newPostInput').value.trim();
+  const title = document.querySelector('#title').value.trim();
+  const body = document.querySelector('#newPostInput').value.trim();
 
-  if (postTitle && commentInput) {
-    const response = await fetch('/api/users/login', {
+  if (title && body) {
+    const response = await fetch('/api/post', {
       method: 'POST',
-      body: JSON.stringify({ postTitle, newPostInput }),
+      body: JSON.stringify({ title, body }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -24,5 +24,5 @@ const postFormHandler = async (event) => {
 };
 
 document
-  .querySelector('.edit post')
+  .querySelector('.edit')
   .addEventListener('submit', postFormHandler);

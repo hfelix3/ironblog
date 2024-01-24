@@ -30,14 +30,13 @@ router.get('/:id', async (req, res) => {
 
 //update a comment
 router.put('/:id', async (req, res) => {
-  const CommentData = await Comment.update(req.body, {
-    where: {
-      id: req.params.id,
-      user_id: req.session.user_id,
-    },
-  });
-
-  return res.json(CommentData);
+    const CommentData = await Comment.update(req.body, {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+    return res.json(CommentData);
 });
 
 //Delete comment

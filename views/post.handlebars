@@ -2,30 +2,29 @@
   <H1>New Post</H1>
 </header>
 
-<section class='edit post'>
+<form class='edit post'>
   {{!TODO: place a date here }}
 
   <div>
-
-    <input type='text' placeholder='Title' />
-
+    <input id='title' type='text' placeholder='Title' />
   </div>
 
   <br />
 
   <div>
-    <p>Comment</p>
+    <p>Content:</p>
     <textarea
       id='newPostInput'
       class='postTitle'
       placeholder='Write your comment'
     >
-
     </textarea>
   </div>
 
   <button type='submit' value='post'>
-    <a href='/dashboard'>Post</a>
+    Post
   </button>
 
-</section>
+</form>
+
+<script src='/js/newPost.js'></script>

@@ -19,7 +19,7 @@ button {
   font-family: inherit;
 }
 
-.editButton {
+.editButton, .deleteButton {
   font-size: 13px;
   padding: 0.1em 1.5em;
   letter-spacing: 0.1em;

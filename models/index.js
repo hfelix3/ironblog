@@ -23,4 +23,4 @@ Post.belongsTo(User, {
   onDelete: 'CASCADE',
 });
 
-module.exports = { User, IronBlog, Comment };
+module.exports = { User, IronBlog, Comment, Post };
