@@ -20,7 +20,8 @@ const hbs = exphbs.create({});
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    // maxAge: 300000,might not need this
+    // this is maxAge means the cookie will expire and be deleted from the client's browser after 3000000 or 5min
+    maxAge: 300000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
